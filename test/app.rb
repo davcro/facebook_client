@@ -12,14 +12,14 @@ get '/' do
 end
 
 get '/fb/auth' do
-  redirect $fb.graph_authenticator.authorize_url(
+  redirect $fb.auth.url(
     :redirect_uri => redirect_uri,
     :scope        => 'email'
   )
 end
 
 get '/fb/auth/callback' do
-  access = $fb.graph_authenticator.request_access(
+  access = $fb.auth.request_access(
     :redirect_uri => redirect_uri,
     :code         => params[:code]
   )

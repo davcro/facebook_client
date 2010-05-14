@@ -5,13 +5,13 @@ module FacebookClient
   
   class ResponseError < StandardError; end
   
-  class GraphAuthenticator
+  class Auth
     
     def initialize(fb)
       @fb=fb
     end
 
-    def authorize_url(params={})
+    def url(params={})
       # params
       #  - scope
       #  - redirect_uri
