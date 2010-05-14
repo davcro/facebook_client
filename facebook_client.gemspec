@@ -5,7 +5,6 @@ Gem::Specification.new do |s|
   s.date = %q{2010-05-13}
   s.description = %q{Facebook Client}
   s.email = %q{davy@davcro.com}
-	s.executables = []
   s.files = Dir['lib/**/*.rb']
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}
