@@ -37,7 +37,7 @@ module FacebookClient
         raise ResponseError, "response must be a hash"
       end
       data = data.stringify_keys
-      missing_keys = ['access_token', 'expires']-data.keys 
+      missing_keys = ['access_token']-data.keys 
       if missing_keys.size>0
         raise ResponseError, "response missing key(s) #{missing_keys.join(', ')}"
       end
