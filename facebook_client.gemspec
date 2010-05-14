@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{facebook_client}
-  s.version = "0.0.1"
+  s.version = File.read('VERSION')
   s.authors = ["David Crockett"]
   s.date = %q{2010-05-13}
   s.description = %q{Facebook Client}
