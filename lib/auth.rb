@@ -29,7 +29,7 @@ module FacebookClient
       response = connection.get(access_token_url(params))
       data = Rack::Utils.parse_query(response.body)
       validate_access_token_response(data)
-      @fb.graph_access(data['access_token'], data['expires'])
+      @fb.graph(data['access_token'], data['expires'])
     end
     
     def validate_access_token_response(data)

@@ -2,7 +2,7 @@ require 'faraday'
 
 module FacebookClient
   
-  class GraphAccess
+  class Graph
     
     attr_reader :access_token
     

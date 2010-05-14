@@ -1,6 +1,6 @@
 require File.dirname(__FILE__)+'/ext'
 
-require File.dirname(__FILE__)+'/graph_access'
+require File.dirname(__FILE__)+'/graph'
 require File.dirname(__FILE__)+'/auth'
 require File.dirname(__FILE__)+'/rest_api'
 
@@ -26,8 +26,8 @@ module FacebookClient
       @auth ||= Auth.new(self)
     end
     
-    def graph_access(token, expires=nil)
-      GraphAccess.new(self,token,expires)
+    def graph(token, expires=nil)
+      Graph.new(self,token,expires)
     end
 
     def rest_api
