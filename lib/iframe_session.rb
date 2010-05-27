@@ -22,7 +22,7 @@ module FacebookClient
     end
   
     def secure?
-      @data.is_a?(Hash)
+      @data.is_a?(Hash) and @data.has_key?('uid')
     end
   
     def uid
