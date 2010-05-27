@@ -3,6 +3,8 @@ require File.dirname(__FILE__)+'/ext'
 require File.dirname(__FILE__)+'/graph'
 require File.dirname(__FILE__)+'/auth'
 require File.dirname(__FILE__)+'/rest_api'
+ 
+require File.dirname(__FILE__)+'/cookie_session'
 
 module FacebookClient
   

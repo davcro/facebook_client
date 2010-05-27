@@ -18,7 +18,6 @@ module FacebookClient
       params = params.stringify_keys
       params['client_id'] = @fb.app_id
       params.require_keys('redirect_uri', 'client_id')
-      params.assert_valid_keys('redirect_uri', 'client_id', 'scope')
       connection.build_url('/oauth/authorize', params).to_s
     end
 
