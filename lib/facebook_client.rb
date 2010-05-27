@@ -5,6 +5,7 @@ require File.dirname(__FILE__)+'/auth'
 require File.dirname(__FILE__)+'/rest_api'
  
 require File.dirname(__FILE__)+'/cookie_session'
+require File.dirname(__FILE__)+'/iframe_session'
 
 module FacebookClient
   

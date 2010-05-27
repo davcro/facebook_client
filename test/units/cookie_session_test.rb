@@ -3,7 +3,7 @@ require File.dirname(__FILE__)+'/../environment'
 require 'shoulda'
 require 'rr'
 
-class CookieSession < Test::Unit::TestCase
+class CookieSessionTest < Test::Unit::TestCase
   
   include RR::Adapters::TestUnit
   
