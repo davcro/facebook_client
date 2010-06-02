@@ -1,0 +1,5 @@
+ENV['FB_APP_ID'] = '12345'
+ENV['FB_API_KEY'] = '12345'
+ENV['FB_SECRET'] = '12345'
+ENV['FB_CANVAS'] = '12345'
+ENV['FB_CALLBACK_URL'] = 'http://localhost:4567'

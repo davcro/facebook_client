@@ -2,8 +2,8 @@ Gem::Specification.new do |s|
   s.name = %q{facebook_client}
   s.version = File.read('VERSION')
   s.authors = ["David Crockett"]
-  s.date = %q{2010-05-13}
-  s.description = %q{Facebook Client}
+  s.date = %q{2010-06-02}
+  s.description = %q{Client for the Facebook Platform}
   s.email = %q{davy@davcro.com}
   s.files = Dir['lib/**/*.rb']
   s.require_paths = ["lib"]
