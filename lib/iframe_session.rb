@@ -24,6 +24,11 @@ module FacebookClient
     def secure?
       @data.is_a?(Hash) and @data.has_key?('uid')
     end
+    
+    def graph
+      @graph ||= Fb.new.graph(@data["access_token"], 0)
+      @graph
+    end
   
     def uid
       @data['uid']
