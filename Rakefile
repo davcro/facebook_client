@@ -1,7 +1,7 @@
 task :publish do
   version = File.read('VERSION')
   puts "publishing gem facebook_client #{version}"
-  exec "gem build facebook_client.gemspec ; gem push facebook_client-#{version}.gem"
+  exec "gem build facebook_client.gemspec ; gem push facebook_client-#{version}.gem ; rm -f facebook_client-#{version}.gem"
 end
 
 task :install do
