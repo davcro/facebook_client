@@ -2,7 +2,6 @@
 
 There are a lot of great Facebook API clients out there and most of them are coded better than this one.  Still none worked out for me.  Facebooker was bloated (a class for every api call, yikes!), and others were slow to adopt to platform changes.  This is my personal client and I use it on several high traffic apps (over 1M dau).  The general philosophy is to have a minimal codebase that can adapt to dramatic changes in the Facebook API. 
 
-
 # CONFIGURATION
 
 This client is tailored for Heroku in that configuration variables are pulled from the environment.
@@ -14,7 +13,6 @@ Set the following variables in the appropriate environment file
     ENV['FB_SECRET']       = "gattaca"
     ENV['FB_CANVAS']       = "gattaca"
     ENV['FB_CALLBACK_URL'] = "http://gattaca.heroku.com" # no trailing slash 
-
 
 # EXAMPLES
 
@@ -55,16 +53,8 @@ Set the following variables in the appropriate environment file
     graph = Fb.new.graph(user.access_token, 0)
     graph.get('/me')
 
+# Tests
 
-  
-
-
-
-
-
-
-
- 
-
-
-
+1. Setup `test/config.rb` with your facebook app credentials
+2. Open new terminal window and run the sinatra app: `cd test && ruby app.rb`
+3. `rake test:units` (or to run individual tests, `ruby test/units/test_name.rb`)

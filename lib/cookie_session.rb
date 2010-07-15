@@ -15,7 +15,12 @@ module FacebookClient
       @fb=fb
       @data=parse_fbs!(cookies["fbs_#{fb.app_id}"])
     end
-  
+    
+    def graph
+      @graph ||= Fb.new.graph(@data["access_token"], 0)
+      @graph
+    end
+    
     def parse_fbs!(fbs)
       @data = fbs &&
         check_sig_and_return_data(Rack::Utils.parse_query(fbs[1..-2]))
