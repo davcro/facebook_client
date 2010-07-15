@@ -8,16 +8,14 @@ module FacebookClient
     
     attr_reader :access_token
     
-    def initialize(fb, access_token, expires=nil)
-      @fb=fb
-      @access_token=access_token
-      if expires.nil?
-        expires=0
-      end
-      expires=expires.to_i
+    def initialize(fb, access_token, expires = nil)
+      @fb           = fb
+      @access_token = access_token
+      expires       = 0 if expires.nil?
+      expires       = expires.to_i
     end
-
-    def get(path, params={})
+    
+    def get(path, params = {})
       params = params.stringify_keys
       params['access_token'] = @access_token
       response = connection.run_request(:get, path, nil, {}) do |request|

@@ -30,8 +30,8 @@ module FacebookClient
       @auth ||= Auth.new(self)
     end
     
-    def graph(token, expires=nil)
-      Graph.new(self,token,expires)
+    def graph(token, expires = nil)
+      Graph.new(self, token, expires)
     end
 
     def rest_api

@@ -26,10 +26,10 @@ module FacebookClient
     end
     
     def graph
-      @graph ||= Fb.new.graph(@data["access_token"], 0)
+      @graph ||= Graph.new(@fb, @data["access_token"], 0)
       @graph
     end
-  
+    
     def uid
       @data['uid']
     end
