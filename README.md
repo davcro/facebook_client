@@ -2,6 +2,8 @@
 
 There are a lot of great Facebook API clients out there and most of them are coded better than this one.  Still none worked out for me.  Facebooker was bloated (a class for every api call, yikes!), and others were slow to adopt to platform changes.  This is my personal client and I use it on several high traffic apps (over 1M dau).  The general philosophy is to have a minimal codebase that can adapt to dramatic changes in the Facebook API. 
 
+[Facebook Signature](http://developers.facebook.com/docs/authentication/canvas#fb_sig)
+
 # CONFIGURATION
 
 This client is tailored for Heroku in that configuration variables are pulled from the environment.

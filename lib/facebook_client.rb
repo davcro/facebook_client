@@ -1,3 +1,4 @@
+require 'openssl'
 require File.dirname(__FILE__)+'/ext'
 
 require File.dirname(__FILE__)+'/graph'
