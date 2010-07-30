@@ -5,7 +5,7 @@ module FacebookClient
     require 'digest'
     require 'yajl' 
 
-    class SessionParam
+    class SessionParam < Base
 
       def self.create_and_secure(fb, params)
         iframe_session = new(fb, params)
@@ -27,13 +27,12 @@ module FacebookClient
         @data.is_a?(Hash) and @data.has_key?('uid')
       end
 
-      def graph
-        @graph ||= Graph.new(@fb, @data["access_token"], 0)
-        @graph
-      end
-
       def uid
         @data['uid']
+      end
+      
+      def access_token
+        @data["access_token"]
       end
 
       # private

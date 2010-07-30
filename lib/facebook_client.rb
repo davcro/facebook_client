@@ -9,6 +9,7 @@ require File.dirname(__FILE__)+'/session/base'
 require File.dirname(__FILE__)+'/session/cookie'
 require File.dirname(__FILE__)+'/session/fb_sig_param'
 require File.dirname(__FILE__)+'/session/signed_request_param'
+require File.dirname(__FILE__)+'/session/session_param'
 
 module FacebookClient
   
