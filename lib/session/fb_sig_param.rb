@@ -4,7 +4,7 @@ module FacebookClient
   
     require 'digest'
 
-    class FbSigParam
+    class FbSigParam < Base
 
       def self.create_and_secure(fb, params)
         legacy_session = new(fb, params)
@@ -24,12 +24,11 @@ module FacebookClient
       def uid
         @params['user']
       end
-  
-      def graph
-        @graph ||= Graph.new(@fb, @params["session_key"], 0)
-        @graph
+      
+      def access_token
+        @params["session_key"]
       end
-
+  
       def verfiy_params_and_return(params)
         if params['fb_sig'].nil? or !params['fb_sig'].is_a?(String)
           log 'missing fb_sig'

@@ -4,12 +4,11 @@ module FacebookClient
 
     require 'rack'
     require 'digest'
-
-    class Cookie
+    
+    class Cookie < Base
   
       def self.create_and_secure(fb, cookies)
         cookie_session = new(fb, cookies)
-    
         cookie_session.secure? ? cookie_session : nil
       end
   
@@ -17,12 +16,7 @@ module FacebookClient
         @fb=fb
         @data=parse_fbs!(cookies["fbs_#{fb.app_id}"])
       end
-    
-      def graph
-        @graph ||= Graph.new(@fb, @data["access_token"], 0)
-        @graph
-      end
-    
+        
       def parse_fbs!(fbs)
         @data = fbs &&
           check_sig_and_return_data(Rack::Utils.parse_query(fbs[1..-2]))
@@ -30,6 +24,10 @@ module FacebookClient
   
       def secure?
         @data.is_a?(Hash) and @data.has_key?('uid')
+      end
+      
+      def access_token
+        @data['access_token']
       end
   
       def uid

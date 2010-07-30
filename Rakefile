@@ -15,9 +15,9 @@ namespace :test do
     require 'test/units/base_test.rb'
     require 'test/units/graph_test.rb'
     require 'test/units/auth_test.rb'
-    require 'test/units/iframe_session_test.rb'
-    require 'test/units/legacy_session_test.rb'
-    require 'test/units/cookie_session_test.rb'
+    require 'test/units/session/cookie_test.rb'
+    require 'test/units/session/fb_sig_param_test.rb'
+    require 'test/units/session/signed_request_test.rb'
   end
   
 end

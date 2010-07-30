@@ -1,9 +1,9 @@
-require File.dirname(__FILE__)+'/../environment'
+require File.dirname(__FILE__)+'/../../environment'
 
 require 'shoulda'
 require 'rr'
 
-class LegacySessionTest < Test::Unit::TestCase
+class FbSigParamTest < Test::Unit::TestCase
   
   include RR::Adapters::TestUnit
   
@@ -21,7 +21,7 @@ class LegacySessionTest < Test::Unit::TestCase
         'fb_sig_api_key' => '1234lkasjfla',
         'fb_sig' => 'b2dce473bc98eaf6d9e75d296e822ac6'
       }
-      session = FacebookClient::LegacySession.create_and_secure(@fb,params)
+      session = FacebookClient::Session::FbSigParam.create_and_secure(@fb,params)
       assert_equal '1747108423', session.uid
     end
     

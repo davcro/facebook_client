@@ -18,35 +18,34 @@ module FacebookClient
     require 'base64'
     require 'openssl'
 
-    class SignedRequestParam
+    class SignedRequestParam < Base
 
       def self.create_and_secure(fb, params)
-        iframe_session = new(fb, params)
+        session = new(fb, params)
   
-        iframe_session.secure? ? iframe_session : nil
+        session.secure? ? session : nil
       end
 
       def initialize(fb, params)
         @fb=fb
-        @data=parse_fbs!(params["signed_request"])
+        @data=parse_signed_request!(params["signed_request"])
       end
 
-      def parse_fbs!(fbs)
-        @data = fbs &&
-          check_sig_and_return_data(fbs, self.class.parse_params(fbs))
+      def parse_signed_request!(str)
+        @data = str &&
+          check_sig_and_return_data(str, self.class.parse_params(str))
       end
 
       def secure?
         @data.is_a?(Hash) and @data.has_key?('user_id')
       end
-  
-      def graph
-        @graph ||= Graph.new(@fb, @data["oauth_token"], 0)
-        @graph
-      end
-  
+    
       def uid
         @data['user_id']
+      end
+      
+      def access_token
+        @data["oauth_token"]
       end
 
       # private

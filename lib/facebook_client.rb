@@ -5,9 +5,10 @@ require File.dirname(__FILE__)+'/graph'
 require File.dirname(__FILE__)+'/auth'
 require File.dirname(__FILE__)+'/rest_api'
  
-require File.dirname(__FILE__)+'/cookie_session'
-require File.dirname(__FILE__)+'/iframe_session'
-require File.dirname(__FILE__)+'/legacy_session'
+require File.dirname(__FILE__)+'/session/base'
+require File.dirname(__FILE__)+'/session/cookie'
+require File.dirname(__FILE__)+'/session/fb_sig_param'
+require File.dirname(__FILE__)+'/session/signed_request_param'
 
 module FacebookClient
   
